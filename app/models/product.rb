@@ -5,7 +5,7 @@ class Product < ApplicationRecord
     .joins(:reviews)
     .group("products.id")
     .order("reviews_count DESC")
-    .limit(10)
+    .limit(5)
     )}
   has_many :reviews, dependent: :destroy
   validates :name, presence: true

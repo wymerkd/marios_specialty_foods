@@ -8,7 +8,7 @@
     <% end %>
   </ul>
 <% else %>
-  <p>There are no products yet.</p>
+  <p>There are no product reviews yet.</p>
 <% end %>
 
 <% if @products_most_recent.any? %>
@@ -19,7 +19,7 @@
     <% end %>
   </ul>
 <% else %>
-  <p>There are no products yet.</p>
+  <p>There are no recent products added.</p>
 <% end %>
 
 <p><%= link_to "Create new product", new_product_path %></p>
