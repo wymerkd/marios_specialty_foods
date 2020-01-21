@@ -8,16 +8,18 @@
 
 Product.destroy_all
 
+# first creates 50 fake products
 50.times do |index|
-  Product.create!(name: Faker::Food.dish,
+  product = Product.create!(name: Faker::Food.dish,
                   cost: Faker::Number.decimal(l_digits: 2),
                   country: Faker::Address.country)
-  # product.save()
-  # 2.times do |j|
-  #   product.reviews.create!(author: Faker::FunnyName.two_word_name,
-  #     content: Faker::Lorem.paragraph_by_chars(number: 50),
-  #     rating: Faker::Number.between(from: 1, to: 5))
-  # end
+  product.save()
+  #then creates 5 fake reviews for each of the 50 fake products
+  5.times do |j|
+    product.reviews.create!(author: Faker::FunnyName.two_word_name,
+      content: Faker::Lorem.paragraph_by_chars(number: 50),
+      rating: Faker::Number.between(from: 1, to: 5))
+  end
 end
 
 p "Created #{Product.count} products with #{Review.count} reviews"
