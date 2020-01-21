@@ -22,5 +22,16 @@
   <p>There are no recent products added.</p>
 <% end %>
 
+<% if @products_locally_made.any? %>
+  <ul>
+    <% @products_locally_made.each do |local_products| %>
+
+      <li><%= link_to local_products.name, product_path(local_products) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no products made in the United States of America.</p>
+<% end %>
+
 <p><%= link_to "Create new product", new_product_path %></p>
 <p><%= link_to "View all current products", products_path %></p>

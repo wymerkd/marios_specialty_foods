@@ -3,7 +3,8 @@
 <h2>Product: <%= @product.name %></h2>
 <h2>Rating: <%= @review.rating %></h2>
 
-<h3><%= @review.content %></h3>
+<h3><%= @review.author.capitalize() %> says: </h3>
+<h4><%= @review.content %></h4>
 
 <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
 <p><%= link_to "Delete review", product_review_path(@product, @review),
