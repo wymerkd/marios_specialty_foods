@@ -9,17 +9,15 @@
 Product.destroy_all
 
 50.times do |index|
-  Product.create!(name: Faker::Hacker.noun)
+  Product.create!(name: Faker::Food.dish,
+                  cost: Faker::Number.decimal(l_digits: 2),
+                  country: Faker::Address.country)
+  # product.save()
+  # 2.times do |j|
+  #   product.reviews.create!(author: Faker::FunnyName.two_word_name,
+  #     content: Faker::Lorem.paragraph_by_chars(number: 50),
+  #     rating: Faker::Number.between(from: 1, to: 5))
+  # end
 end
 
-p "Created #{Product.count} products"
-
-
-
-Review.destroy_all
-
-20.times do |index|
-  Project.create!(review: Faker::Hacker.noun)
-end
-
-p "Created #{Project.count} projects"
+p "Created #{Product.count} products with #{Review.count} reviews"
