@@ -21,7 +21,8 @@ _This project demonstrates my current skills in Ruby and Rails. The application 
 * _Clone or download the repository from GitHub_
 * _Navigate to the root directory of the cloned repository via terminal_
 * _In the terminal, run $ bundle install_
-* _Then run $ psql_
+* _In a separate terminal window run $ psql_
+* _To recreate the database, run $ rake db:create_
 * _Then run $ rails s_
 * _In your browser connect to localhost:3000_
 
