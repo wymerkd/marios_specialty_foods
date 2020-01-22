@@ -17,7 +17,7 @@ Product.destroy_all
   #then creates 5 fake reviews for each of the 50 fake products
   5.times do |j|
     product.reviews.create!(author: Faker::FunnyName.two_word_name,
-      content: Faker::Lorem.paragraph_by_chars(number: 50),
+      content: Faker::Cannabis.health_benefit + "                                                               ",
       rating: Faker::Number.between(from: 1, to: 5))
   end
 end

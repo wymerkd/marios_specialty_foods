@@ -1,14 +1,20 @@
-<h1>Reviewer: <%= @review.author.capitalize() %></h1>
-<img src="https://i.pravatar.cc/100" alt="fake avatar">
-<h2>Product: <%= @product.name %></h2>
-<h2>Rating: <%= @review.rating %></h2>
+<div class="center">
 
-<h3><%= @review.author.capitalize() %> says: </h3>
-<h4><%= @review.content %></h4>
 
-<p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
-<p><%= link_to "Delete review", product_review_path(@product, @review),
-                        :data => {:confirm => "Are you sure?",
-                                       :method => "delete"} %></p>
+  <h1>Reviewer: <%= @review.author.to_str.titleize() %></h1>
+  <img src="https://i.pravatar.cc/100" alt="fake avatar">
+  <h2>Product: <%= @product.name %></h2>
+  <h2>Rating: <%= @review.rating %></h2>
 
-<p><%= link_to "Return to product", product_path(@product) %></p>
+  <h3><%= @review.author.to_str.titleize() %> says: </h3>
+  <h4>"<%= @review.content %>"</h4>
+
+  <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
+  <p><%= link_to "Delete review", product_review_path(@product, @review),
+                          :data => {:confirm => "Are you sure?",
+                                         :method => "delete"} %></p>
+
+  <p><%= link_to "Return to product", product_path(@product) %></p>
+
+
+</div>
